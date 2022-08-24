@@ -8,3 +8,15 @@ services:
     build:
       context: .
       dockerfile: ./dockerfiles/yarn.dockerfile
+
+  # postgres
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: prisma
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+    volumes:
+      - /tmp/postgres/starter-project:/var/lib/postgresql/data
