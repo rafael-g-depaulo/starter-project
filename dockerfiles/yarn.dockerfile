@@ -4,4 +4,7 @@ USER node
 
 WORKDIR /app
 
+COPY [".nvmrc", ".yarnrc.yml", "./"]
+COPY .yarn .
+
 ENTRYPOINT ["yarn"]
