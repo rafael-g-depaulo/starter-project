@@ -1,18 +1,22 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
+import * as express from "express"
+import { PrismaClient } from "@db"
 
-import * as express from 'express';
+const app = express()
 
-const app = express();
+const db = new PrismaClient()
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to api!' });
-});
+db.$connect().then(() => {
+  app
+    .get("/api", (_, res) => {
+      res.send({ message: "Welcome to api!" })
+    })
+    .get("/users", (_, res) => {
+      db.user.findMany().then((users) => res.json({ users }))
+    })
 
-const port = process.env.PORT || 3333;
-const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
-});
-server.on('error', console.error);
+  const port = process.env.PORT || 3333
+  const server = app.listen(port, () => {
+    console.log(`Listening at http://localhost:${port}/api`)
+  })
+  server.on("error", console.error)
+})

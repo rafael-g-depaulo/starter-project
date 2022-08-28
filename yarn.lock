@@ -11626,6 +11626,7 @@ __metadata:
     "@nrwl/eslint-plugin-nx": 14.5.10
     "@nrwl/express": 14.5.10
     "@nrwl/jest": 14.5.10
+    "@nrwl/js": 14.5.10
     "@nrwl/linter": 14.5.10
     "@nrwl/node": 14.5.10
     "@nrwl/nx-cloud": latest
