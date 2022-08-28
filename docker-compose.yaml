@@ -21,6 +21,24 @@ services:
     command: yarn nx serve client
     ports:
       - "4200:4200"
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/app.dockerfile
+    volumes:
+      - ./.yarn/cache:/app/.yarn/cache
+      - ./apps:/app/apps
+      - ./libs:/app/libs
+    command: yarn nx serve api
+    environment:
+      - PORT=3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
 
   # postgres
   postgres:

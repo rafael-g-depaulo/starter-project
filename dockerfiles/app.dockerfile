@@ -4,7 +4,7 @@ WORKDIR /app
 
 # add node/yarn config files
 COPY [".nvmrc", "package.json", "yarn.lock", ".yarnrc.yml", "./"]
-COPY .yarn .yarn
+COPY .yarn/ ./.yarn/
 
 RUN ["yarn", "install"]
 
