@@ -21,6 +21,7 @@
     "@nrwl/react": "14.5.10",
     "@nrwl/web": "14.5.10",
     "@nrwl/workspace": "14.5.10",
+    "@nx-extend/strapi": "^3.0.1",
     "@testing-library/react": "13.3.0",
     "@types/axios": "^0.14.0",
     "@types/cors": "^2.8.12",
