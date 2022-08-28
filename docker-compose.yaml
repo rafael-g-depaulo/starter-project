@@ -1,5 +1,6 @@
 version: "3.3"
 services:
+  # yarn service. used for CLI
   yarn:
     stdin_open: true
     tty: true
@@ -8,6 +9,18 @@ services:
     build:
       context: .
       dockerfile: ./dockerfiles/yarn.dockerfile
+
+  client:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/app.dockerfile
+    volumes:
+      - ./.yarn/cache:/app/.yarn/cache
+      - ./apps:/app/apps
+      - ./libs:/app/libs
+    command: yarn nx serve client
+    ports:
+      - "4200:4200"
 
   # postgres
   postgres:
