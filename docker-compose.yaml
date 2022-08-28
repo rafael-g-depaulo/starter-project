@@ -18,6 +18,8 @@ services:
       - ./.yarn/cache:/app/.yarn/cache
       - ./apps:/app/apps
       - ./libs:/app/libs
+      - ./node_modules:/app/node_modules
+      - ./libs/db/node_modules:/app/libs/db/node_modules
     command: yarn nx serve client
     ports:
       - "4200:4200"
@@ -32,9 +34,12 @@ services:
       - ./.yarn/cache:/app/.yarn/cache
       - ./apps:/app/apps
       - ./libs:/app/libs
+      - ./node_modules:/app/node_modules
+      - ./libs/db/node_modules:/app/libs/db/node_modules
     command: yarn nx serve api
     environment:
       - PORT=3000
+      - DATABASE_URL=postgresql://prisma:prisma@postgres:5432/prisma
     ports:
       - "3000:3000"
     depends_on:
