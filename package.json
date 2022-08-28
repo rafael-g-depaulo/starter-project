@@ -14,6 +14,7 @@
     "@nrwl/eslint-plugin-nx": "14.5.10",
     "@nrwl/express": "14.5.10",
     "@nrwl/jest": "14.5.10",
+    "@nrwl/js": "14.5.10",
     "@nrwl/linter": "14.5.10",
     "@nrwl/node": "14.5.10",
     "@nrwl/nx-cloud": "latest",
@@ -49,6 +50,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "express": "^4.18.1",
+    "prisma": "^4.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.3.0",
