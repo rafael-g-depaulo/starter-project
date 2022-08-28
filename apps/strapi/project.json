@@ -1,0 +1,30 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/strapi/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "build"
+      },
+      "configurations": {
+        "production": {
+          "script": "build"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "develop"
+      },
+      "configurations": {
+        "production": {
+          "script": "start"
+        }
+      }
+    }
+  },
+  "tags": []
+}
