@@ -1991,6 +1991,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nrwl/express@npm:14.5.10":
+  version: 14.5.10
+  resolution: "@nrwl/express@npm:14.5.10"
+  dependencies:
+    "@nrwl/devkit": 14.5.10
+    "@nrwl/node": 14.5.10
+    "@nrwl/workspace": 14.5.10
+  peerDependencies:
+    express: ^4.18.1
+  peerDependenciesMeta:
+    express:
+      optional: true
+  checksum: 8d24d1ebdeaba45d59afd96d812f92e75c4664e8c9d5e4edaff807897010b00c744e6b4b9299ede5afa3a049401852aaf93d4dda951ec9068a9c40e4382061e2
+  languageName: node
+  linkType: hard
+
 "@nrwl/jest@npm:14.5.10":
   version: 14.5.10
   resolution: "@nrwl/jest@npm:14.5.10"
@@ -2049,6 +2065,39 @@ __metadata:
     eslint:
       optional: true
   checksum: a763ee301e22b50775533a256c8b12ab31a99a9b5235c30df87905d9f6a30168470b81e550da85d0b0ff67b779fae9712ea06e000929eb394aabdddc09c97f45
+  languageName: node
+  linkType: hard
+
+"@nrwl/node@npm:14.5.10":
+  version: 14.5.10
+  resolution: "@nrwl/node@npm:14.5.10"
+  dependencies:
+    "@nrwl/devkit": 14.5.10
+    "@nrwl/jest": 14.5.10
+    "@nrwl/js": 14.5.10
+    "@nrwl/linter": 14.5.10
+    "@nrwl/workspace": 14.5.10
+    chalk: 4.1.0
+    copy-webpack-plugin: ^10.2.4
+    dotenv: ~10.0.0
+    enhanced-resolve: ^5.8.3
+    fork-ts-checker-webpack-plugin: 7.2.13
+    fs-extra: ^10.1.0
+    glob: 7.1.4
+    license-webpack-plugin: ^4.0.2
+    rxjs: ^6.5.4
+    source-map-support: 0.5.19
+    terser-webpack-plugin: ^5.3.3
+    tree-kill: 1.2.2
+    ts-loader: ^9.3.1
+    ts-node: 10.9.1
+    tsconfig-paths: ^3.9.0
+    tsconfig-paths-webpack-plugin: 3.5.2
+    tslib: ^2.3.0
+    webpack: ^5.58.1
+    webpack-merge: ^5.8.0
+    webpack-node-externals: ^3.0.0
+  checksum: 8c91547970ce2cddcea7ed8478b4734d7710202b6acefbb7cd6223316995c29ce548caf5b936db2aba459cfcaf9775df147fa045f5bcac77885717ba7f19025a
   languageName: node
   linkType: hard
 
@@ -11556,6 +11605,7 @@ __metadata:
     "@nrwl/cli": 14.5.10
     "@nrwl/cypress": 14.5.10
     "@nrwl/eslint-plugin-nx": 14.5.10
+    "@nrwl/express": 14.5.10
     "@nrwl/jest": 14.5.10
     "@nrwl/linter": 14.5.10
     "@nrwl/nx-cloud": latest
