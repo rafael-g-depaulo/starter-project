@@ -1,7 +1,10 @@
-import * as express from "express"
+import express from "express"
 import { PrismaClient } from "@db"
+import cors from "cors"
 
 const app = express()
+
+app.use(cors())
 
 const db = new PrismaClient()
 

@@ -3,4 +3,5 @@
 
 export const environment = {
   production: false,
-};
+  API_HOST: process.env["NX_API_HOST"] ?? `localhost:3333`,
+}
