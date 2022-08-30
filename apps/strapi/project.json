@@ -40,6 +40,15 @@
         "command": "yarn install",
         "cwd": "apps/strapi"
       }
+    },
+    "generate-types": {
+      "executor": "@nrwl/workspace:run-script",
+      "options": {
+        "script": "generate-types"
+      },
+      "outputs": [
+        "apps/strapi/schemas.d.ts"
+      ]
     }
   },
   "tags": []
