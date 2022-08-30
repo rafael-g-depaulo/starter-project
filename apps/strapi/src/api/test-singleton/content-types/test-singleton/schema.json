@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "test_singletons",
+  "info": {
+    "singularName": "test-singleton",
+    "pluralName": "test-singletons",
+    "displayName": "test singleton"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
