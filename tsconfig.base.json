@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@db": ["libs/db/src/index.ts"]
+      "@db": ["libs/db/src/index.ts"],
+      "@types/strapi": ["libs/types/strapi/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

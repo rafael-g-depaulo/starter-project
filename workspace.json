@@ -6,6 +6,7 @@
     "client": "apps/client",
     "client-e2e": "apps/client-e2e",
     "db": "libs/db",
-    "strapi": "apps/strapi"
+    "strapi": "apps/strapi",
+    "types-strapi": "libs/types/strapi"
   }
 }
