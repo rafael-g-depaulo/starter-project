@@ -8,11 +8,17 @@
       "options": {
         "script": "build"
       },
+      "outputs": [
+        "apps/strapi/dist"
+      ],
       "configurations": {
         "production": {
           "script": "build"
         }
-      }
+      },
+      "dependsOn": [
+        "install"
+      ]
     },
     "serve": {
       "executor": "@nrwl/workspace:run-script",
@@ -23,6 +29,16 @@
         "production": {
           "script": "start"
         }
+      },
+      "dependsOn": [
+        "install"
+      ]
+    },
+    "install": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "yarn install",
+        "cwd": "apps/strapi"
       }
     }
   },

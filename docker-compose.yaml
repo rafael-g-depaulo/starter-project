@@ -27,6 +27,7 @@ services:
       - "4200:4200"
     depends_on:
       - api
+      - strapi
 
   api:
     build:
@@ -44,6 +45,26 @@ services:
       - DATABASE_URL=postgresql://prisma:prisma@postgres:5432/prisma
     ports:
       - "3000:3000"
+    depends_on:
+      - postgres
+
+  strapi:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/app.dockerfile
+    volumes:
+      - ./.yarn/cache:/app/.yarn/cache
+      - ./apps:/app/apps
+      - ./libs:/app/libs
+      - ./node_modules:/app/node_modules
+      - ./libs/db/node_modules:/app/libs/db/node_modules
+      - ./apps/strapi/node_modules:/app/apps/strapi/node_modules
+    command: yarn nx serve strapi
+    environment:
+      - PORT=1337
+      - DATABASE_URL=postgresql://prisma:prisma@postgres:5432/prisma
+    ports:
+      - "1337:1337"
     depends_on:
       - postgres
 
