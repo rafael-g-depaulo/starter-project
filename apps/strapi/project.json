@@ -48,6 +48,11 @@
       },
       "outputs": [
         "apps/strapi/schemas.d.ts"
+      ],
+      "inputs": [
+        {
+          "fileset": "{projectRoot}/src/api/*/content-types/**/*.json"
+        }
       ]
     }
   },
