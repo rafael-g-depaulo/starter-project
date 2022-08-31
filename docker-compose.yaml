@@ -42,11 +42,11 @@ services:
     command: yarn nx serve api
     environment:
       - PORT=3000
-      - DATABASE_URL=postgresql://prisma:prisma@postgres:5432/prisma
+      - DATABASE_URL=postgresql://prisma:prisma@api-db:5432/prisma
     ports:
       - "3000:3000"
     depends_on:
-      - postgres
+      - api-db
 
   strapi:
     build:
@@ -62,14 +62,25 @@ services:
     command: yarn nx serve strapi
     environment:
       - PORT=1337
-      - DATABASE_URL=postgresql://prisma:prisma@postgres:5432/prisma
+      - DATABASE_URL=postgresql://prisma:prisma@strapi-db:5432/prisma
     ports:
       - "1337:1337"
     depends_on:
-      - postgres
+      - strapi-db
 
   # postgres
-  postgres:
+  strapi-db:
+    image: postgres
+    expose:
+      - 5432
+    environment:
+      POSTGRES_DB: prisma
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+    volumes:
+      - /tmp/postgres/starter-project/strapi-db:/var/lib/postgresql/data
+
+  api-db:
     image: postgres
     ports:
       - "5432:5432"
@@ -78,4 +89,4 @@ services:
       POSTGRES_USER: prisma
       POSTGRES_PASSWORD: prisma
     volumes:
-      - /tmp/postgres/starter-project:/var/lib/postgresql/data
+      - /tmp/postgres/starter-project/api-db:/var/lib/postgresql/data
