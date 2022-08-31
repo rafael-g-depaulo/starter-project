@@ -6,6 +6,7 @@
     "client": "apps/client",
     "client-e2e": "apps/client-e2e",
     "db": "libs/db",
+    "hooks-use-api": "libs/hooks/use-api",
     "strapi": "apps/strapi",
     "types-api-response": "libs/types/api-response",
     "utils-strapi": "libs/utils/strapi"
