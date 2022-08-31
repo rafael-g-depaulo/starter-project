@@ -1,1 +1,1 @@
-export * from "./lib/Strapi"
+export * from "./lib/Singleton"
