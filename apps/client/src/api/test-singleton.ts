@@ -1,5 +1,5 @@
 import { ApiTestSingletonTestSingleton } from "@starter-project/strapi"
-import { Singleton } from "@starter-project/types/strapi"
+import { Singleton } from "@starter-project/utils/strapi"
 import { useQuery } from "react-query"
 import { strapi } from "."
 

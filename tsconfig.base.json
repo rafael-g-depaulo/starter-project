@@ -18,7 +18,7 @@
     "paths": {
       "@db": ["libs/db/src/index.ts"],
       "@starter-project/strapi": ["apps/strapi/schemas.d.ts"],
-      "@starter-project/types/strapi": ["libs/types/strapi/src/index.ts"]
+      "@starter-project/utils/strapi": ["libs/utils/strapi/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
