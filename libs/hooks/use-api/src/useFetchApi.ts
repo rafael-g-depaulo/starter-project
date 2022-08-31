@@ -1,4 +1,4 @@
-import { ErrorObject } from "@starter-project/types/api-response"
+import { ErrorObject } from "@starter-project/api-response"
 import { AxiosError } from "axios"
 import { QueryFunction, useQuery, UseQueryOptions } from "react-query"
 
