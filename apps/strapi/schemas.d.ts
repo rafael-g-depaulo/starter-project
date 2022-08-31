@@ -13,10 +13,12 @@ import {
   PasswordAttribute,
   BooleanAttribute,
   EnumerationAttribute,
-  SingleTypeSchema,
   IntegerAttribute,
   DecimalAttribute,
   SetMinMax,
+  ComponentAttribute,
+  SingleTypeSchema,
+  ComponentSchema,
 } from "@strapi/strapi"
 
 export interface AdminPermission extends CollectionTypeSchema {
@@ -208,35 +210,6 @@ export interface AdminApiToken extends CollectionTypeSchema {
       PrivateAttribute
     updatedBy: RelationAttribute<
       "admin::api-token",
-      "oneToOne",
-      "admin::user"
-    > &
-      PrivateAttribute
-  }
-}
-
-export interface ApiTestSingletonTestSingleton extends SingleTypeSchema {
-  info: {
-    singularName: "test-singleton"
-    pluralName: "test-singletons"
-    displayName: "test singleton"
-  }
-  options: {
-    draftAndPublish: true
-  }
-  attributes: {
-    title: StringAttribute
-    createdAt: DateTimeAttribute
-    updatedAt: DateTimeAttribute
-    publishedAt: DateTimeAttribute
-    createdBy: RelationAttribute<
-      "api::test-singleton.test-singleton",
-      "oneToOne",
-      "admin::user"
-    > &
-      PrivateAttribute
-    updatedBy: RelationAttribute<
-      "api::test-singleton.test-singleton",
       "oneToOne",
       "admin::user"
     > &
@@ -552,6 +525,76 @@ export interface PluginUsersPermissionsUser extends CollectionTypeSchema {
   }
 }
 
+export interface ApiTestCollectionTestCollection extends CollectionTypeSchema {
+  info: {
+    singularName: "test-collection"
+    pluralName: "test-collections"
+    displayName: "test-collection"
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    component: ComponentAttribute<"test-component.test-component">
+    createdAt: DateTimeAttribute
+    updatedAt: DateTimeAttribute
+    publishedAt: DateTimeAttribute
+    createdBy: RelationAttribute<
+      "api::test-collection.test-collection",
+      "oneToOne",
+      "admin::user"
+    > &
+      PrivateAttribute
+    updatedBy: RelationAttribute<
+      "api::test-collection.test-collection",
+      "oneToOne",
+      "admin::user"
+    > &
+      PrivateAttribute
+  }
+}
+
+export interface ApiTestSingletonTestSingleton extends SingleTypeSchema {
+  info: {
+    singularName: "test-singleton"
+    pluralName: "test-singletons"
+    displayName: "test singleton"
+    description: ""
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    title: StringAttribute
+    components: ComponentAttribute<"test-component.test-component", true>
+    createdAt: DateTimeAttribute
+    updatedAt: DateTimeAttribute
+    publishedAt: DateTimeAttribute
+    createdBy: RelationAttribute<
+      "api::test-singleton.test-singleton",
+      "oneToOne",
+      "admin::user"
+    > &
+      PrivateAttribute
+    updatedBy: RelationAttribute<
+      "api::test-singleton.test-singleton",
+      "oneToOne",
+      "admin::user"
+    > &
+      PrivateAttribute
+  }
+}
+
+export interface TestComponentTestComponent extends ComponentSchema {
+  info: {
+    displayName: "test-component"
+    icon: "calendar"
+  }
+  attributes: {
+    field: BooleanAttribute
+  }
+}
+
 declare global {
   namespace Strapi {
     interface Schemas {
@@ -559,13 +602,15 @@ declare global {
       "admin::user": AdminUser
       "admin::role": AdminRole
       "admin::api-token": AdminApiToken
-      "api::test-singleton.test-singleton": ApiTestSingletonTestSingleton
       "plugin::upload.file": PluginUploadFile
       "plugin::upload.folder": PluginUploadFolder
       "plugin::i18n.locale": PluginI18NLocale
       "plugin::users-permissions.permission": PluginUsersPermissionsPermission
       "plugin::users-permissions.role": PluginUsersPermissionsRole
       "plugin::users-permissions.user": PluginUsersPermissionsUser
+      "api::test-collection.test-collection": ApiTestCollectionTestCollection
+      "api::test-singleton.test-singleton": ApiTestSingletonTestSingleton
+      "test-component.test-component": TestComponentTestComponent
     }
   }
 }

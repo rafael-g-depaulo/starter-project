@@ -4,7 +4,8 @@
   "info": {
     "singularName": "test-singleton",
     "pluralName": "test-singletons",
-    "displayName": "test singleton"
+    "displayName": "test singleton",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,11 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "components": {
+      "type": "component",
+      "repeatable": true,
+      "component": "test-component.test-component"
     }
   }
 }
