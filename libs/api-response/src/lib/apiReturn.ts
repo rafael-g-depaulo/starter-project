@@ -40,7 +40,7 @@ export const errorReturn =
   }
 
 export type successReturnFn = (res: Response, data: Data) => Response
-export const successfulReturn =
+export const successReturn =
   (status: number) => (res: Response, data: Data) => {
     return res.status(status).json(SuccessObj(status, data))
   }

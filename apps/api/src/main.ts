@@ -1,5 +1,6 @@
 import express from "express"
 import { PrismaClient } from "@db"
+import { fetchedSuccessfully } from "@starter-project/api-response"
 import cors from "cors"
 
 const app = express()
@@ -14,7 +15,7 @@ db.$connect().then(() => {
       res.send({ message: "Welcome to api!" })
     })
     .get("/users", (_, res) => {
-      db.user.findMany().then((users) => res.json({ users }))
+      db.user.findMany().then((users) => fetchedSuccessfully(res, users))
     })
 
   const port = process.env.PORT || 3333
