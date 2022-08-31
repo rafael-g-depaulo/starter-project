@@ -18,6 +18,9 @@
     "paths": {
       "@db": ["libs/db/src/index.ts"],
       "@starter-project/strapi": ["apps/strapi/schemas.d.ts"],
+      "@starter-project/types/api-response": [
+        "libs/types/api-response/src/index.ts"
+      ],
       "@starter-project/utils/strapi": ["libs/utils/strapi/src/index.ts"]
     }
   },
