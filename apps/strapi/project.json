@@ -8,17 +8,13 @@
       "options": {
         "script": "build"
       },
-      "outputs": [
-        "apps/strapi/dist"
-      ],
+      "outputs": ["apps/strapi/dist"],
       "configurations": {
         "production": {
           "script": "build"
         }
       },
-      "dependsOn": [
-        "install"
-      ]
+      "dependsOn": ["install"]
     },
     "serve": {
       "executor": "@nrwl/workspace:run-script",
@@ -30,9 +26,7 @@
           "script": "start"
         }
       },
-      "dependsOn": [
-        "install"
-      ]
+      "dependsOn": ["install"]
     },
     "install": {
       "executor": "@nrwl/workspace:run-commands",
@@ -46,9 +40,7 @@
       "options": {
         "script": "generate-types"
       },
-      "outputs": [
-        "apps/strapi/schemas.d.ts"
-      ],
+      "outputs": ["apps/strapi/schemas.d.ts"],
       "inputs": [
         {
           "fileset": "{projectRoot}/src/api/*/content-types/**/*.json"
