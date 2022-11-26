@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # this shouldn't be necessary, but it currently is
-./scripts/strapi/env-setup.sh
+scripts/strapi/env-setup.sh
 
 nvm --version
 node --version
