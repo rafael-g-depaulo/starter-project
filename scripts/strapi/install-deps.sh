@@ -1,5 +1,9 @@
 #!/bin/bash
 
+nvm --version
+node --version
+yarn --version
+
 # install deps
 yarn install
 
