@@ -21,4 +21,4 @@ nvm use
 npm i -g yarn
 
 # setup permissions for whole all files in project folder. this sometimes is necessary
-sudo chmod -R 777 .
+sudo chmod -R 777 /home/ec2-user/app
