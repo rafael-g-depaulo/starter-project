@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo install dependencies
+      - npm i -g yarn
+      - yarn install
+
+  build:
+    commands:
+      - echo building with versions
+      - node --version
+      - yarn --version
+      - yarn nx run strapi:build
+
+  # post_build:
+  #   commands:
+
+artifacts:
+  base-directory: "."
+  files:
+    - "**/*"
